@@ -10,10 +10,11 @@ int main(void)
 	char let;
 
 	let = 'a';
-	while (let < 'z')
+	let--;
+        while (let < 'z')
 	{
-		putchar(let);
 		let++;
+		putchar(let);
 	}
 	putchar ('\n');
 
