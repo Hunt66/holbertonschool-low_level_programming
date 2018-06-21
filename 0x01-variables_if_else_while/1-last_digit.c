@@ -17,8 +17,6 @@ int main(void)
 {
 	int n;
 
-	int l;
-
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
@@ -26,15 +24,13 @@ int main(void)
 	printf(" %d ", n);
 	printf("is ");
 
-	l = (n % 10);
 
 
-	printf("%d",l);
-	if (l > 5)
-		printf(" and is greater than 5\n");
-	else if (l == 0)
-		printf(" and is 0\n");
-	else if (l < 6)
-		printf(" and is less than 6 and not 0\n");
+	if (n % 10 > 5)
+		printf("%d and is greater than 5\n", n % 10);
+	else if (n % 10 == 0)
+		printf("%d and is 0\n", n % 10);
+	else (n % 10 < 6)
+		     printf("%d and is less than 6 and not 0\n", n % 10);
 	return (0);
 }
