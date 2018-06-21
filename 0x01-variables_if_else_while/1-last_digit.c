@@ -22,7 +22,9 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	printf("Last digit of %d is ", n);
+	printf("Last digit of");
+	printf(" %d ", n);
+	printf("is ");
 
 	l = (n % 10);
 
