@@ -1,11 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
+#include <cstdlib>
 #include <stdio.h>
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- *
  * more headers goes there
  * THis program makes a randome number and prints weather
  * it is negitive, positive or zero
@@ -24,7 +21,7 @@ int main(void)
 	if (n > 0)
 		printf("%d is positive\n", n);
 	else if (n < 0)
-		printf("%d is negative\n", n);
+		printf("%d is negitive\n", n);
 	else if (n == 0)
 		printf("%d is zero\n", n);
 	return (0);
