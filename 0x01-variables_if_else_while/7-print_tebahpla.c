@@ -7,10 +7,15 @@
  */
 int main(void)
 {
-	int i;
+	char let;
 
-	for (i = '0'; i <= '9'; i++)
-		putchar(i);
+	let = 'z';
+	let++;
+	while (let > 'a')
+	{
+		let--;
+		putchar(let);
+	}
 	putchar ('\n');
 
 	return (0);
