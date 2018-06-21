@@ -2,6 +2,10 @@
 #include <time.h>
 #include <stdio.h>
 /**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ *
  *  more headers goes there
  * THis program makes a randome number and prints weather
  * it is negitive, positive or zero
@@ -13,13 +17,17 @@ int main(void)
 {
 	int n;
 
+	int l;
+
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
 	printf("Last digit of %d is ", n);
-	int l = n % 10;
 
-	printf(l);
+	l = (n % 10);
+
+
+	printf("%d",l);
 	if (l > 5)
 		printf(" and is greater than 5\n");
 	else if (l == 0)
