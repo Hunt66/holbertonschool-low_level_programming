@@ -22,14 +22,14 @@ int _isalpha(int c)
 	int a;
 	int i;
 
-	i = 1;
+	i = 0;
 
 	for(b = 'a';b <= 'z';b++)
 		for(a = 'A';a <= 'Z';a++)
 		{
 			if(c == b||c ==a)
 			{
-				i = 0;
+				i = 1;
 				break;
 			}
 
@@ -48,12 +48,14 @@ int main(void)
 {
 	int r;
 
-	r = _islower('H');
-	_putchar(r + '0');
-	r = _islower('o');
-	_putchar(r + '0');
-	r = _islower(108);
-	_putchar(r + '0');
-	_putchar('\n');
+	r = _isalpha('H');
+	putchar(r + '0');
+	r = _isalpha('o');
+	putchar(r + '0');
+	r = _isalpha(108);
+	putchar(r + '0');
+	r = _isalpha(';');
+	putchar(r + '0');
+	putchar('\n');
 	return (0);
 }
