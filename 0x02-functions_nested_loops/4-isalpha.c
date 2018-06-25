@@ -4,32 +4,36 @@
  * main- entry point accepts nothing
  *       returns 0
  *
- * _islower - accepts char
+ * _isalpha - accepts char
  *                  returns 0 or 1
- *                  0 if not lower
- *                  1 if lower
+ *                  0 if not alphabet
+ *                  1 if part of alphabet
  *
  * Return: alwayse 0
  *
- * does-tests weather H,0,o,108,and \n are lower
+ * does-tests weather H,0,o,108,and \n in alphabet
  */
 
 
 
-int _islower(int c)
+int _isalpha(int c)
 {
 	int b;
+	int a;
 	int i;
 
-	i = 0;
+	i = 1;
+
 	for(b = 'a';b <= 'z';b++)
-	{
-		if(c == b)
+		for(a = 'A';a <= 'Z';a++)
 		{
-			i = 1;
-			break;
+			if(c == b||c ==a)
+			{
+				i = 0;
+				break;
+			}
+
 		}
-	}
 	return(i);
 }
 
