@@ -1,9 +1,6 @@
-# include <stdio.h>
+# include "holberton.h"
 
 /**
- * main- entry point accepts nothing
- *       returns 0
- *
  * print_alphabet_x10 - accepts void
  *                  returns 0
  *                  prints alphabet 10 times
@@ -15,31 +12,17 @@
 
 
 
-int print_alphabet_x10(void)
+void print_alphabet_x10(void)
 {
 	int i;
 	int j;
 
-	for (j = 0;j <= 9; j++)
+	for (j = '0' ; j <= '9' ; j++)
 	{
-		for (i = 'a';i <= 'z';i++)
+		for (i = 'a' ; i <= 'z'; i++)
 		{
-			putchar(i);
+			_putchar(i);
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
-	return (0);
-}
-
-
-
-
-
-
-
-
-int main(void)
-{
-	print_alphabet_x10();
-	return(0);
 }
