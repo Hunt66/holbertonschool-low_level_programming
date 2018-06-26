@@ -18,18 +18,19 @@ void times_table(void)
 	int a;
 	int b;
 
-	for (i = '0' ; i <= '9' ; i++)
+	for (i = 0 ; i <= 9 ; i++)
 	{
-		for (j = '0' ; j <= '9' ; j++)
+		for (j = 0 ; j <= 9 ; j++)
 		{
 			q = (i * j);
-			a = q / 10;
-			b = q % 10;
-			if (a > 0)
+			a = ('0' + (q / 10));
+			b = ('0' + (q % 10));
+			if (a > '0')
 				_putchar(a);
+			else
+				_putchar(' ');
 			_putchar(b);
 			_putchar(',');
-			_putchar(' ');
 			_putchar(' ');
 		}
 		_putchar('\n');
