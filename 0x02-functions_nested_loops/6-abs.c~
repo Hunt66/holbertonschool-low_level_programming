@@ -1,0 +1,33 @@
+# include "holberton.h"
+
+/**
+ * _abs(int) - accepts int
+ *              returns absolute value
+ *
+ * Return: alwayse absolute value
+ *
+ */
+
+
+
+int _abs(int)
+{
+	int i;
+
+	if (n > 0)
+	{
+		_putchar('+');
+		i = 1;
+	}
+	if (n == 0)
+	{
+		_putchar('0');
+		i = 0;
+	}
+	if (n < 0)
+	{
+		_putchar('-');
+		i = -1;
+	}
+	return (i);
+}
