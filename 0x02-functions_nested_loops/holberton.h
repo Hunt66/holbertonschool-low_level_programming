@@ -1,4 +1,5 @@
 # include <stdio.h>
+# include "_putchar.c"
 
 /**
  *
@@ -15,14 +16,14 @@
 
 int print_alphabet(void)
 {
-        int i;
+	int i;
 
-        for (i = 'a';i <= 'z';i++)
-        {
-                putchar(i);
-        }
-        putchar('\n');
-        return (0);
+	for (i = 'a';i <= 'z';i++)
+	{
+		_putchar(i);
+	}
+	putchar('\n');
+	return (0);
 }
 
 
@@ -38,21 +39,21 @@ int print_alphabet(void)
 
 
 
- int print_alphabet_x10(void)
- {
-	 int i;
-	 int j;
+int print_alphabet_x10(void)
+{
+	int i;
+	int j;
 
-	 for (j = 0;j <= 9; j++)
-	 {
-		 for (i = 'a';i <= 'z';i++)
-		 {
-			 putchar(i);
-		 }
-		 putchar('\n');
-	 }
-	 return (0);
- }
+	for (j = 0;j <= 9; j++)
+	{
+		for (i = 'a';i <= 'z';i++)
+		{
+			_putchar(i);
+		}
+		_putchar('\n');
+	}
+	return (0);
+}
 
 /**
  *  _islower - accepts char
@@ -67,22 +68,22 @@ int print_alphabet(void)
 
 
 
-			 int _islower(int c)
- {
-	 int b;
-	 int i;
+int _islower(int c)
+{
+	int b;
+	int i;
 
-	 i = 0;
-	 for(b = 'a';b <= 'z';b++)
-	 {
-		 if(c == b)
-		 {
-			 i = 1;
-			 break;
-		 }
-	 }
-	 return(i);
- }
+	i = 0;
+	for(b = 'a';b <= 'z';b++)
+	{
+		if(c == b)
+		{
+			i = 1;
+			break;
+		}
+	}
+	return(i);
+}
 
 
 /**
@@ -98,24 +99,21 @@ int print_alphabet(void)
 
 
 
-				      int _isalpha(int c)
- {
-	 int b;
-	 int a;
-	 int i;
+int _isalpha(int c)
+{
+	int b;
+	int a;
+	int i;
 
-	 i = 0;
-
-	 for(b = 'a';b <= 'z';b++)
-		 for(a = 'A';a <= 'Z';a++)
-		 {
-			 if(c == b||c ==a)
-			 {
-				 i = 1;
-				 break;
-			 }
-
-		 }
-	 return(i);
- }
-
+	i = 0;
+	for(b = 'a';b <= 'z';b++)
+		for(a = 'A';a <= 'Z';a++)
+		{
+			if(c == b||c ==a)
+			{
+				i = 1;
+				break;
+			}
+		}
+	return(i);
+}

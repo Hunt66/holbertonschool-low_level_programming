@@ -1,4 +1,5 @@
 # include <stdio.h>
+# include "holberton.h"
 
 /**
  * main- entry point accepts nothing
@@ -12,22 +13,6 @@
  *
  * does-prints lower alphabet
  */
-
-
-
-int print_alphabet(void)
-{
-	int i;
-
-	for (i = 'a';i <= 'z';i++)
-	{
-		putchar(i);
-	}
-	putchar('\n');
-	return (0);
-}
-
-
 
 
 
