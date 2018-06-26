@@ -1,5 +1,4 @@
-# include <stdio.h>
-# include "_putchar.c"
+# include "holberton.h"
 
 /**
  * main- entry point accepts nothing
