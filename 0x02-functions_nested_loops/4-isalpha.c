@@ -24,7 +24,7 @@ int _isalpha(int c)
 	for (b = 'a' ; b <= 'z' ; b++)
 		for (a = 'A' ; a <= 'Z' ; a++)
 		{
-			if (c == b || c ==a)
+			if (c == b || c == a)
 			{
 				i = 1;
 				break;
