@@ -24,16 +24,25 @@ void print_times_table(int n)
 		for (j = 0 ; j <= n ; j++)
 		{
 			q = (i * j);
-			a = ('0' + (q / 100));
-			b = ('0' + (q % 10));
-			c = ('0' + ((q % 100) % 10));
+			if (q >= 100)
+			{
+				a = ('0' + (q / 100));
+				b = ('0' + (q % 10));
+				c = ('0' + ((q / 10) % 10));
+			}
+			if (q < 100)
+			{
+				a = '0';
+				c = ('0' + (q / 10));
+				b = ('0' + (q % 10));
+			}
 			if (a > '0')
 				_putchar(a);
 			else if (j != 0)
 				_putchar(' ');
 			if (c > '0')
 				_putchar(c);
-			else if (j != 0)
+			else if (j != 0 && a == '0')
 				_putchar(' ');
 			_putchar(b);
 			if (j == n)
