@@ -1,7 +1,7 @@
 # include "holberton.h"
 
 /**
- * _abs(int) - accepts int
+ * _abs - accepts int
  *              returns absolute value
  *@n: input int
  * Return: alwayse absolute value
