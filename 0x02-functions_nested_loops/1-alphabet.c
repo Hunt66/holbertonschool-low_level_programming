@@ -2,9 +2,6 @@
 
 
 /**
- * main- entry point accepts nothing
- *       returns 0
- *
  * print_alphabet - accepts void
  *                  returns 0
  *                  prints alphabet
@@ -17,10 +14,9 @@
 
 void print_alphabet(void)
 {
-	char i;
+	int i;
 
 	for(i = 'a';i <= 'z';i++)
 		_putchar(i);
 	_putchar('\n');
-	return(0);
 }
