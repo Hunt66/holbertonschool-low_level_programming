@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	long int a, b, c;
+	long int a, b, c, d ;
 
 	a = 0;
 	b = 1;
@@ -20,11 +20,11 @@ int main(void)
 		c = a + b;
 		a = b;
 		b = c;
-		printf("%ld", c);
+		if (c % 2 == 0)
+			d += c;
 		if (c > 4000000)
 			break;
-		printf(", ");
 	}
-	printf("\n");
+	printf("%ld\n", d);
 	return (0);
 }
