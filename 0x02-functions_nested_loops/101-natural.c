@@ -1,43 +1,27 @@
-# include "holberton.h"
+# include <stdio.h>
 
 /**
- * print_times_table - accepts int
- *                     prints multiplication table to the int
- *                     followed by new line
+ * main - list all natural nums
+ *        below 1024 that are multiples of
+ *        3 or 5 and print sum of said multiples
+ *
  * Return: alwayse 0
  *
+ * does-
  */
 
 
 
-void print_times_table(int n)
+int main(void)
 {
-	int a,b,c,x,y,z;
-	if (n <= 15 && n > 0)
+	int a, b;
+
+	b = 0;
+	for (a = 1 ; a < 1024 ; a++)
 	{
-		for (a = 0 ; a <= n ; a++)
-		{
-			for (b = 0 ; b <= n ; b++)
-			{
-				c = a * b;
-				x = c / 100;
-				y = (c / 10) % 10;
-				z = c % 10;
-				if (x > 0)
-					_putchar('0' + x);
-				else if (b != 0)
-					_putchar(' ');
-				if (y >= 0 && c >= 10)
-					_putchar('0' + y);
-				else if (b != 0)
-					_putchar(' ');
-				_putchar(z + '0');
-				if (b == n)
-					break;
-				_putchar(',');
-				_putchar(' ');
-			}
-			_putchar('\n');
-		}
+		if ((a % 3) == 0 || (a % 5) == 0)
+			b += a;
 	}
+	printf("%d\n", b);
+	return (0);
 }
