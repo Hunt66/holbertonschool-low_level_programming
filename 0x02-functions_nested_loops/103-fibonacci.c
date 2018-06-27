@@ -1,0 +1,31 @@
+# include "holberton.h"
+#include <stdio.h>
+/**
+ * main- prints all fibanaccie nums
+ *       starting with the second 1
+ *
+ * Return: alwayse 0
+ *
+ * does- not excede 4000000
+ */
+
+int main(void)
+{
+	long int a, b, c;
+
+	a = 0;
+	b = 1;
+	c = 0;
+	while (1)
+	{
+		c = a + b;
+		a = b;
+		b = c;
+		printf("%ld", c);
+		if (c > 4000000)
+			break;
+		printf(", ");
+	}
+	printf("\n");
+	return (0);
+}
