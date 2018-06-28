@@ -21,9 +21,9 @@ void print_number(int n)
 		_putchar('-');
 		if (a < 0)
                         _putchar((a * -1) + '0');
-                if (b < 0)
+                if (b < 0 || a < 0)
                         _putchar((b * -1) + '0');
-                if (c < 0)
+                if (c < 0 || a < 0 || b < 0)
                         _putchar((c * -1) + '0');
                 _putchar((d * -1) + '0');
 	}
@@ -31,11 +31,10 @@ void print_number(int n)
 	{
 		if (a > 0)
 			_putchar(a + '0');
-		if (b > 0)
+		if (b > 0 || a > 0)
 			_putchar(b + '0');
-		if (c > 0)
+		if (c > 0 || a > 0 || b > 0)
 			_putchar(c + '0');
 		_putchar(d + '0');
 	}
-	_putchar('\n');
 }
