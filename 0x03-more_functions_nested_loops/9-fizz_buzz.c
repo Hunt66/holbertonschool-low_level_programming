@@ -1,5 +1,5 @@
 #include "holberton.h"
-# include <stdio.h>
+#include <stdio.h>
 
 /**
  *main - accepts void prints 1 to 100
@@ -13,7 +13,7 @@ int main(void)
 {
 	int i;
 
-	for (i = 1 ; i <= 100 ; i++)
+	for (i = 1 ; i <= 99 ; i++)
 	{
 		if ((i % 3) == 0 && (i % 5) == 0)
 			printf("FizzBuzz ");
@@ -26,6 +26,7 @@ int main(void)
 			printf("%d ", i);
 		}
 	}
+	printf("Buzz");
 	putchar('\n');
 	return (0);
 }
