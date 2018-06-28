@@ -1,0 +1,33 @@
+#include "holberton.h"
+#include <stdio.h>
+#include <math.h>
+/**
+ *main - accepts void prints 1 to 100
+ *       but if something is divisable by 3
+ *       print fizz and buzz if 5 both
+ *       if devisable by both
+ *Return: 0
+ */
+
+int main(void)
+{
+	long int i, fac, k, curr;
+
+	i = 612852475143;
+	curr = 0;
+	for (fac = 2 ; fac < ((sqrt(i) / 1) + 1) ; fac++)
+	{
+		if ((i % fac) == 0)
+		{
+			for (k = 2 ; k <= fac / 2 ; k++)
+			{
+				if ((fac % k) == 0)
+					break;
+				curr = fac;
+			}
+		}
+	}
+	curr = i / curr;
+	printf("%ld\n", curr);
+	return (0);
+}
