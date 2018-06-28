@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *print_diagonal - accepts an int
+ *print_triangle - accepts an int
  *                 prints a triangle
  *                 made of # s of that
  *                 size
