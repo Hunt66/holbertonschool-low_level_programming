@@ -6,7 +6,7 @@
  *                 diagonal
  *@n: accepted int
  *
- *Return: void
+ *
  */
 
 void print_diagonal(int n)
