@@ -10,12 +10,18 @@
 
 void print_number(int n)
 {
-	int a, b, c, d;
+	int a, b, c, d, e , f, g, h, i, j, k;
 
-	a = n / 1000;
-	b = (n / 100) % 10;
-	c = (n / 10) % 10;
-	d = n % 10;
+	a = n / 1000000000;
+	b = (n / 100000000) % 10;
+	c = (n / 10000000) % 10;
+	e = (n / 1000000) % 10;
+	f = (n / 100000) % 10;
+	g = (n / 10000) % 10;
+	h = (n / 1000) % 10;
+	i = (n / 100) % 10;
+	j = (n / 10) % 10;
+	k = n % 10;
 	if (n < 0)
 	{
 		_putchar('-');
@@ -25,7 +31,24 @@ void print_number(int n)
 			_putchar((b * -1) + '0');
 		if (c < 0 || a < 0 || b < 0)
 			_putchar((c * -1) + '0');
-		_putchar((d * -1) + '0');
+		if (d < 0 || a < 0 || b < 0 || c < 0)
+			_putchar((d * -1) + '0');
+		if (e < 0 || a < 0 || b < 0 || c < 0 || d < 0)
+			_putchar((e * -1) + '0');
+		if (f < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0)
+			_putchar((f * -1) + '0');
+		if (g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0)
+			_putchar((g * -1) + '0');
+		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
+		    || f < 0)
+			_putchar((h * -1) + '0');
+		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
+		    || f < 0 || i < 0)
+			_putchar((i * -1) + '0');
+		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
+		    || f < 0 || i < 0 || j < 0)
+			_putchar((j * -1) + '0');
+		_putchar((k * -1) + '0');
 	}
 	else
 	{
@@ -35,6 +58,23 @@ void print_number(int n)
 			_putchar(b + '0');
 		if (c > 0 || a > 0 || b > 0)
 			_putchar(c + '0');
-		_putchar(d + '0');
+		if (d < 0 || a < 0 || b < 0 || c < 0)
+			_putchar(d + '0');
+		if (e < 0 || a < 0 || b < 0 || c < 0 || d < 0)
+			_putchar(e + '0');
+		if (f < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0)
+			_putchar(f + '0');
+		if (g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0)
+			_putchar(g + '0');
+		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
+		    || f < 0)
+			_putchar(h + '0');
+		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
+		    || f < 0 || i < 0)
+			_putchar(i + '0');
+		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
+		    || f < 0 || i < 0 || j < 0)
+			_putchar(j + '0');
+		_putchar(k + '0');
 	}
 }
