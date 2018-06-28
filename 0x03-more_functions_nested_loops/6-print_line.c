@@ -5,7 +5,7 @@
  *             of _ chars
  *@n: accepted int
  *
- *Return: void
+ *
  */
 
 void print_line(int n)
