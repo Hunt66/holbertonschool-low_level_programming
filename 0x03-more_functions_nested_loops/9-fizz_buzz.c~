@@ -1,0 +1,35 @@
+#include "holberton.h"
+# include <stdio.h>
+
+/**
+ *main - accepts void prints 1 to 100
+ *       but if something is divisable by 3
+ *       print fizz and buzz if 5 both
+ *       if devisable by both
+ *Return: 0
+ */
+
+int main(void)
+{
+	int i, a, b;
+
+	for (i = 0 ; i <= 100 ; i++)
+	{
+		a = i / 10;
+		b = i % 10;
+		if ((i % 3) == 0 && (i % 5) == 0)
+			printf("FizzBuzz ");
+		else if ((i % 3) == 0)
+			printf("Fizz ");
+		else if ((i % 5) == 0)
+			printf("Buzz ");
+		else
+		{
+			if ((i / 10) > 0)
+				putchar(a + '0');
+			putchar(b + '0');
+		}
+	}
+	putchar('\n');
+	return (0);
+}
