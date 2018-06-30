@@ -1,80 +1,33 @@
 #include "holberton.h"
+#include <math.h>
+
 /**
- *print_number - accepts an int
- *               and prints it
- *               using _putchar
- *@n: accepted int
- *
- *Return: void
+ * print_number(int n) - This funciton will print any input int n
+ *@n: n is the input int that will print
+ *Return:void
  */
 
 void print_number(int n)
 {
-	int a, b, c, d, e , f, g, h, i, j, k;
+	int inc, hold, plc;
+	int y = 1;
+	int prt = 1;
 
-	a = n / 1000000000;
-	b = (n / 100000000) % 10;
-	c = (n / 10000000) % 10;
-	e = (n / 1000000) % 10;
-	f = (n / 100000) % 10;
-	g = (n / 10000) % 10;
-	h = (n / 1000) % 10;
-	i = (n / 100) % 10;
-	j = (n / 10) % 10;
-	k = n % 10;
-	if (n < 0)
+	hold = 1;
+	inc = 10;
+	plc = 1;
+	while (1)
 	{
-		_putchar('-');
-		if (a < 0)
-			_putchar((a * -1) + '0');
-		if (b < 0 || a < 0)
-			_putchar((b * -1) + '0');
-		if (c < 0 || a < 0 || b < 0)
-			_putchar((c * -1) + '0');
-		if (d < 0 || a < 0 || b < 0 || c < 0)
-			_putchar((d * -1) + '0');
-		if (e < 0 || a < 0 || b < 0 || c < 0 || d < 0)
-			_putchar((e * -1) + '0');
-		if (f < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0)
-			_putchar((f * -1) + '0');
-		if (g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0)
-			_putchar((g * -1) + '0');
-		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
-		    || f < 0)
-			_putchar((h * -1) + '0');
-		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
-		    || f < 0 || i < 0)
-			_putchar((i * -1) + '0');
-		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
-		    || f < 0 || i < 0 || j < 0)
-			_putchar((j * -1) + '0');
-		_putchar((k * -1) + '0');
+		hold = n / inc;
+		if (hold == 0)
+			break;
+		plc ++;
+		inc = pow(10, plc) / 1;
 	}
-	else
+	_putchar(n / (pow(10, plc) / 1) + '0');
+	for (y = plc ; y > 0 ; y--)
 	{
-		if (a > 0)
-			_putchar(a + '0');
-		if (b > 0 || a > 0)
-			_putchar(b + '0');
-		if (c > 0 || a > 0 || b > 0)
-			_putchar(c + '0');
-		if (d < 0 || a < 0 || b < 0 || c < 0)
-			_putchar(d + '0');
-		if (e < 0 || a < 0 || b < 0 || c < 0 || d < 0)
-			_putchar(e + '0');
-		if (f < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0)
-			_putchar(f + '0');
-		if (g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0)
-			_putchar(g + '0');
-		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
-		    || f < 0)
-			_putchar(h + '0');
-		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
-		    || f < 0 || i < 0)
-			_putchar(i + '0');
-		if (h < 0 || g < 0 || a < 0 || b < 0 || c < 0 || d < 0 || e < 0
-		    || f < 0 || i < 0 || j < 0)
-			_putchar(j + '0');
-		_putchar(k + '0');
+		prt = n / (pow(10, (plc - 1)) / 1);
+		_putchar((prt % 10) + '0');
 	}
 }
