@@ -5,17 +5,20 @@
  *@*s: accepted string or array of chars
  *Return: void
  */
-void print_rev(char *s)
+void rev_string(char *s)
 {
-	int i, j;
+	int i, j, k;
 	char *c = s;
+	char *n = s;
 
 	i = 0;
 	while (c[i] != '\0')
 		++i;
+	k = 0;
 	for (j = i - 1 ; j >= 0 ; j--)
 	{
-		_putchar(s[j]);
+		s[k] = n[j];
+		k++;
 	}
 	_putchar('\n');
 }
