@@ -37,14 +37,10 @@ int _atoi(char *s)
 		return (0);
 	if (n % 2 != 0)
 	{
-		/*if ((r - 1) > r)
-		  return (0);*/
 		return (r * -1);
 	}
 	else
 	{
-		/*if ((r + 1) < r)
-		  return (0);*/
 		return (r);
 	}
 }
