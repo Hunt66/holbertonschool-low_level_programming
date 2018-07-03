@@ -3,7 +3,7 @@
 /**
  * reset_to_98 - This program accepts a pointer to an int
  *               It then changes the value it points to to 98
- *@*n: accepted pointer
+ *@n: accepted pointer
  *Return: void
  */
 

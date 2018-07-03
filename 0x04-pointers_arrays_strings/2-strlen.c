@@ -2,7 +2,7 @@
 
 /**
  * _strlen - accepts a string and finds its length
- *@*s: accepted string pointer
+ *@s: accepted string pointer
  *Return: an int with the length of the string
  */
 

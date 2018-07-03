@@ -2,7 +2,7 @@
 
 /**
  *_puts - will be same as normal puts (prints string followed by newline)
- *@*str: accepted string pointer
+ *@str: accepted string pointer
  *Return: void
  */
 

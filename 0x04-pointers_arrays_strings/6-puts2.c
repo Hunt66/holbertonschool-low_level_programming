@@ -1,9 +1,8 @@
-
 #include "holberton.h"
 
 /**
  *puts2 - prints one char out of 2 of a string, followed by a new line.
- *@*str: accepted string pointer
+ *@str: accepted string pointer
  *Return: void
  */
 

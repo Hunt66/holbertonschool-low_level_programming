@@ -1,0 +1,32 @@
+#include"holberton.h"
+
+/**
+ *puts_half- prints half of an accepted pointer to string followed by newline
+ *@str: accepted string pointer
+ *Retrun: void
+ */
+
+void puts_half(char *str)
+{
+	int i = 0;
+	int j = 0;
+
+	while (str[i] != '\0');
+	{
+		++i;
+		_putchar(i +'0');
+	}
+	if (i % 2 == 0)
+	{
+		j = i / 2;
+	}
+	else
+	{
+		j = (i - 1) / 2;
+	}
+	for ( ; j <= i ; j++)
+	{
+		_putchar(str[j]);
+	}
+	_putchar('\n');
+}
