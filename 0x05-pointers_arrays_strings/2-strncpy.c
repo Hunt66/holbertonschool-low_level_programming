@@ -10,13 +10,19 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int a;
+	int a, b;
 
 	for (a = 0 ; src[a] != '\0' ; a++)
 		;
-	if (n < a)
-		n = a;
+	b = n;
+	if (n > a)
+		b = a;
 	for (a = 0 ; a < n ; a++)
-		dest[a] = src[a];
+	{
+		if (a > b)
+			dest[a] = ' ';
+		else
+			dest[a] = src[a];
+	}
 	return (dest);
 }
