@@ -1,4 +1,5 @@
 #include"holberton.h"
+#include<stdio.h>
 
 
 /**
@@ -11,38 +12,36 @@
 
 void print_number(int n)
 {
-	int inc, hold, cnt, prt;
+	int hold, cnt, prt;
 	unsigned int prt2;
 
 	prt2 = 1;
 	prt = 1;
-	hold = 1;
-	inc = 1;
-	cnt = 1;
+	hold = n;
+	cnt = 0;
 	if (n < 0)
 	{
 		_putchar('-');
 	}
 	while (1)
 	{
-		hold = n / inc;
+		hold = hold / 10;
 		if (hold == 0)
 			break;
-		inc = int_pow(10, cnt);
 		cnt++;
 	}
 	if (n >= 0)
 	{
-		prt = (n / int_pow(10, cnt - 2));
+		prt = (n / int_pow(10, cnt));
 		_putchar(prt + '0');
 	}
 	else
 	{
-		prt = (n / int_pow(10, cnt - 2));
+		prt = (n / int_pow(10, cnt));
 		prt2 = prt * -1;
 		_putchar(prt2 + '0');
 	}
-	cnt = cnt - 3;
+	cnt = cnt - 1;
 	if (n >= 0)
 	{
 		for (cnt = cnt ; cnt > 0 ; cnt--)
