@@ -7,43 +7,21 @@
  *Return: void
  */
 
-/*void print_number(int n)
-{
-	int inc, hold, plc;
-	int y = 1;
-	int prt = 1;
 
-	hold = 1;
-	inc = 10;
-	plc = 1;
-	while (1)
-	{
-		hold = n / inc;
-		if (hold == 0)
-			break;
-		plc ++;
-		inc = int_pow(10, plc);
-	}
-	_putchar(n / ((int_pow(10, plc)) + '0'));
-	plc--;
-	for (y = plc ; y > 0 ; y--)
-	{
-		prt = n / (int_pow(10, y));
-		_putchar((prt % 10) + '0');
-	}
-	}*/
 
 void print_number(int n)
 {
-	int inc, hold, cnt;
+	int inc, hold, cnt, prt;
+	unsigned int prt2;
 
+	prt2 = 1;
+	prt = 1;
 	hold = 1;
 	inc = 1;
 	cnt = 1;
 	if (n < 0)
 	{
 		_putchar('-');
-		n = n * -1;
 	}
 	while (1)
 	{
@@ -53,14 +31,49 @@ void print_number(int n)
 		inc = int_pow(10, cnt);
 		cnt++;
 	}
-	_putchar((n / int_pow(10, cnt - 2)) + '0');
-	cnt = cnt - 3;
-	for (cnt = cnt ; cnt > 0 ; cnt--)
+	if (n >= 0)
 	{
-		_putchar(((n / int_pow(10, cnt)) % 10) + '0');
+		prt = (n / int_pow(10, cnt - 2));
+		_putchar(prt + '0');
+	}
+	else
+	{
+		prt = (n / int_pow(10, cnt - 2));
+		prt2 = prt * -1;
+		_putchar(prt2 + '0');
+	}
+	cnt = cnt - 3;
+	if (n >= 0)
+	{
+		for (cnt = cnt ; cnt > 0 ; cnt--)
+		{
+			prt = ((n / int_pow(10, cnt)) % 10);
+			_putchar(prt + '0');
+		}
+	}
+	else
+	{
+		for (cnt = cnt ; cnt > 0 ; cnt--)
+		{
+			prt = ((n / int_pow(10, cnt)) % 10);
+			prt2 = prt * -1;
+			_putchar(prt2 + '0');
+		}
 	}
 	if (n != 0)
-		_putchar((n % 10) + '0');
+	{
+		if (n >= 0)
+		{
+			prt = n % 10;
+			_putchar(prt + '0');
+		}
+		else
+		{
+			prt = n % 10;
+			prt2 = prt * -1;
+			_putchar(prt2 + '0');
+		}
+	}
 }
 
 

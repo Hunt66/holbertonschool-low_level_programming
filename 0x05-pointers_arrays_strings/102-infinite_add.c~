@@ -1,0 +1,49 @@
+#include"holberton.h"
+
+/**
+ *infinite_add- This adds the numers stored on two strings adds them
+ *@n1: one of the added numbers
+ *@n2: the other added number
+ *@r: pointer to string to store the added numbers
+ *@size_r: the buffer size
+ *Return: r unless numbers cannot be added then 0
+ */
+
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
+{
+	int i, j, x, s, h;
+
+	h = 0;
+	for (i = 0 ; n1[i] != '\0' ; i++)
+		;
+	for (j = 0 ; n2[j] != '\0' ; j++)
+		;
+	if (size_r > i + 1 && size_r > j + 1)
+		return (0);
+	if (i >= j)
+		s = i;
+	else
+		s = j;
+	for (x = s ; x > 0 ; x--)
+	{
+		if (x > i)
+		{
+			r[x] = n2[x] + h;
+			continue;
+		}
+		if (x > j)
+		{
+			r[x] = n1[x] + h;
+			continue;
+		}
+		if (n1[x] + n2[x] + h > 9)
+		{
+			r[x] = n1[x] + n2[x] + h - 10;
+			h = 1;
+			continue;
+		}
+		r[x] = n1[x] + n2[x] + h;
+		h = 0;
+	}
+	return (r);
+}
