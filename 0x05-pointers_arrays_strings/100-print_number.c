@@ -1,5 +1,5 @@
 #include"holberton.h"
-#include<stdio.h>
+
 
 
 /**
@@ -30,12 +30,12 @@ void print_number(int n)
 			break;
 		cnt++;
 	}
-	if (n >= 0)
+	if (n >= 0 && cnt > 0)
 	{
 		prt = (n / int_pow(10, cnt));
 		_putchar(prt + '0');
 	}
-	else
+	else if (cnt > 0)
 	{
 		prt = (n / int_pow(10, cnt));
 		prt2 = prt * -1;
@@ -84,11 +84,11 @@ void print_number(int n)
  *Return: power of these nums in int form
  */
 
-int int_pow(int x, int n)
+int int_pow(int x, int y)
 {
 	int p;
 
-	for (p = 1 ; n > 0 ; --n)
+	for (p = 1 ; y > 0 ; --y)
 		p = p * x;
 	return (p);
 }
