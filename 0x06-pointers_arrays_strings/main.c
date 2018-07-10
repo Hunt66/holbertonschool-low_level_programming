@@ -9,8 +9,8 @@
  */
 int main(void)
 {
-	char *s = "hellow, worlddddd";
-	char *f = "world";
+	char *s = "worldsssss";
+	char *f = "";
 	char *t;
 
 	t = _strstr(s, f);
