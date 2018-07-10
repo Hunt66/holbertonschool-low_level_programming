@@ -1,8 +1,8 @@
 #include"holberton.h"
 
 /**
- *print_cheesboard - prints a chessboard
- *@size: size of chess board in x axix
+ *print_chessboard - prints a chessboard
+ *@a: size of chess board in x axix
  *Return: void
  */
 
