@@ -1,0 +1,27 @@
+#include "holberton.h"
+
+/**
+ *_strchr - function locates first instence of a charicter in a string
+ *@s: accepted string pointer
+ *@c: char function is looking for
+ *Return: first occurence of c in s or NULL if none found
+ */
+
+char *_strchr(char *s, char c)
+{
+	char *sp;
+	char **spp;
+
+	for ( ; *s != '\0' ; s++)
+	{
+		if (*s == c)
+		{
+			sp = s;
+			spp = &sp;
+			return (*spp);
+		}
+		else
+			*s = '\0';
+	}
+	return (0);
+}
