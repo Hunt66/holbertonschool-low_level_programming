@@ -1,5 +1,6 @@
 #include "holberton.h"
 
+
 /**
  *_strstr - locates the first instence of a substring in a string
  *@haystack: string to be searched
@@ -9,13 +10,19 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, rt;
+	int i, j, rt, l, l2;
 
 	rt = 0;
+	for (l = 0 ; haystack[l] != '\0' ; l++)
+		;
+	for (l2 = 0 ; needle[l2] != '\0' ; l2++)
+		;
 	for (i = 0 ; haystack[i] != '\0' ; i++)
 	{
 		if (haystack[i] == needle[0])
 		{
+			if (i + l2 > l)
+				return ('\0');
 			for (j = 0 ; needle[j] != '\0' ; j++)
 			{
 				if (haystack[i + j] != needle[j])
@@ -34,6 +41,5 @@ char *_strstr(char *haystack, char *needle)
 		haystack = haystack + i;
 		return (haystack);
 	}
-	else
-		return ('\0');
+	return ('\0');
 }
