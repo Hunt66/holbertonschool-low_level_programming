@@ -17,8 +17,7 @@ int _sqrt_recursion(int n)
 
 /**
  *_sqrt_help - helps _sqrt_recursion work
- *@x: initial number
- *@y: decramenting number to return
+ *@x: sqrt test
  *@n: number testing for
  *Return: the square root of n
  */
