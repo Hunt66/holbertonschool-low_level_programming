@@ -1,0 +1,41 @@
+#include"holberton.h"
+
+/**
+ *_sqrt_recursion - gets the square root of an int using recursion
+ *@n: number to get sqrt of
+ *Return: sqrt of n
+ */
+
+
+int _sqrt_recursion(int n)
+{
+	int i = n / 2;
+	int j = (i + (n / i)) / 2;
+	int k;
+
+	k = _sqrt_help(i, j, n);
+	if (k <= 0)
+		return (-1);
+	return (k);
+
+}
+
+/**
+ *_sqrt_help - helps _sqrt_recursion work
+ *@x: initial number
+ *@y: decramenting number to return
+ *@n: number testing for
+ *Return: the square root of n
+ */
+
+
+int _sqrt_help(int x, int y, int n)
+{
+	if ((x - y) >= 0)
+	{
+		x = y;
+		y = (x + (n / x)) / 2;
+		return (_sqrt_help(x, y, n));
+	}
+	return (y);
+}
