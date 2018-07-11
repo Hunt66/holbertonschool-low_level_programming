@@ -9,14 +9,9 @@
 
 int _sqrt_recursion(int n)
 {
-	int i = n / 2;
-	int j = (i + (n / i)) / 2;
-	int k;
+	int x = 1;
 
-	k = _sqrt_help(i, j, n);
-	if (k <= 0)
-		return (-1);
-	return (k);
+	return (_sqrt_help(x, n));
 
 }
 
@@ -29,13 +24,13 @@ int _sqrt_recursion(int n)
  */
 
 
-int _sqrt_help(int x, int y, int n)
+int _sqrt_help(int x, int n)
 {
-	if ((x - y) >= 0)
+	if ((x * x) - n == 0)
 	{
-		x = y;
-		y = (x + (n / x)) / 2;
-		return (_sqrt_help(x, y, n));
+		return (x);
 	}
-	return (y);
+	if (x * x > n)
+		return (-1);
+	return (_sqrt_help(x + 1, n));
 }
