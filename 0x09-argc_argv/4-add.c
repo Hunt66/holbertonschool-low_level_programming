@@ -1,0 +1,44 @@
+#include"holberton.h"
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+
+/**
+ *main - adds positive numbers prints result and new line
+ *       if no numbers passed in prints 0 nl if numbers contain
+ *       symbles print Error and return 1
+ *Return: 0 or one if symbles in num
+ */
+
+
+
+int main(int argc, char* argv[])
+{
+	int ans = 0;
+	int i, j;
+
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
+	for (i = 1 ; i < argc ; i++)
+	{
+		for (j = 0 ; argv[i][j] != '\0' ; j++)
+		{
+			if (argv[i][j] >= '0' && argv[i][j] <= '9')
+			{
+				continue;
+			}
+			else
+			{
+				printf("Error\n");
+				return (0);
+			}
+		}
+		ans = ans + atoi(argv[i]);
+	}
+	printf("%d\n", ans);
+	return (0);
+}
