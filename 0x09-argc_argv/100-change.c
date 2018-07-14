@@ -12,7 +12,7 @@
  *Return: 0 or if wrong number of arguments retrun 1
  */
 
-int main(int argc, char* arcv[])
+int main(int argc, char *argv[])
 {
 	int input = 0;
 	int ans = 0;
@@ -22,7 +22,7 @@ int main(int argc, char* arcv[])
 		printf("Error\n");
 		return (1);
 	}
-	input = atoi (arcv[1]);
+	input = atoi(argv[1]);
 	if (input < 0)
 	{
 		printf("0\n");
