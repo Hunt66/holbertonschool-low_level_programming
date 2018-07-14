@@ -8,7 +8,7 @@
  *Return: 0 alwayse
  */
 
-int main(int argc, char* argsv[])
+int main(int argc, char *argv[])
 {
 	int i = 0;
 
