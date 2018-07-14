@@ -8,6 +8,8 @@
  *main - adds positive numbers prints result and new line
  *       if no numbers passed in prints 0 nl if numbers contain
  *       symbles print Error and return 1
+ *@argc: the number of arguments
+ *@argv: the array of arguments
  *Return: 0 or one if symbles in num
  */
 

@@ -4,6 +4,8 @@
 
 /**
  *main - prints two numbers multiplyed
+ *@argc: the number of arguments
+ *@argv: array of arguments
  *Return: 0 if recieves two arguments 1 if not
  */
 

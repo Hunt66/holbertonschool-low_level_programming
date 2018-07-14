@@ -3,6 +3,8 @@
 
 /**
  *main - prints all arguments it recieves
+ *@argc: number of arguments
+ *@argv: the array of arguments
  *Return: 0 alwayse
  */
 

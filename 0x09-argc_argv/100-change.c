@@ -7,6 +7,8 @@
  *main - print the minimum number of coin to make change for an amount fo money
  *       if argument is negative print 0 Error if wrong num of args only
  *       standard coins 25 10 5 2 1
+ *@argc: the number of arguments
+ *@argv: the array of arguments
  *Return: 0 or if wrong number of arguments retrun 1
  */
 

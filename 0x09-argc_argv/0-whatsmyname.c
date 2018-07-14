@@ -3,6 +3,8 @@
 
 /**
  *main - prints out the name of the exicutable file
+ *@argc: the number of arguments, not used
+ *@argv: the array of arguments
  *Return: 0 alwayse
  */
 
