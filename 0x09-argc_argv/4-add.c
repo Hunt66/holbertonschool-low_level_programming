@@ -15,7 +15,7 @@
 
 
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int ans = 0;
 	int i, j;
