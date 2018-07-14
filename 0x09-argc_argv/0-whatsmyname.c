@@ -8,7 +8,7 @@
  *Return: 0 alwayse
  */
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	(void) argc;
 
