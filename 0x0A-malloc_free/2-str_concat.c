@@ -30,12 +30,22 @@ char *str_concat(char *s1, char *s2)
 		{
 			out[j] = s1[j];
 		}
-	}
-	if (s2 != NULL)
-	{
-		for ( ; j < size ; j++)
+		if (s2 != NULL)
 		{
-			out[j] = s2[j - i];
+			for ( ; j < size ; j++)
+			{
+				out[j] = s2[j - i];
+			}
+		}
+	}
+	else
+	{
+		if (s2 != NULL)
+		{
+			for (j = 0 ; j < size ; j++)
+			{
+				out[j] = s2[j];
+			}
 		}
 	}
 	out[j] = '\0';
