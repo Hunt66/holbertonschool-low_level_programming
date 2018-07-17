@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 /**
  *strtow - splits words in a string into seperate strings
@@ -54,7 +55,7 @@ char **strtow(char *str)
 		{
 			;
 		}
-		out[i] = (char *)malloc(j + 1 * sizeof(char));
+		out[i] = (char *)malloc((j + 1) * sizeof(char));
 		if (out[i] == NULL)
 		{
 			for (j = 0 ; j <= i ; j++)
@@ -62,6 +63,7 @@ char **strtow(char *str)
 				free(out[j]);
 			}
 			free(out);
+			return (NULL);
 		}
 		for (j = 0 ; str[k] != ' ' && str[k] != '\0' ; j++)
 		{
