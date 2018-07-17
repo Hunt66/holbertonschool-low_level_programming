@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <string.h>
 
 /**
  *strtow - splits words in a string into seperate strings
@@ -11,31 +10,19 @@
 
 char **strtow(char *str)
 {
-	int i, j, k, count, r;
+	int i, j, k, count;
 	char **out;
 
 	if (str == NULL || strlen(str) == 0)
 		return (NULL);
-	count = 0;
+	count = 1;
 	k = 0;
-	r = 0;
-	if (str[0] != ' ')
-		count++;
 	for (i = 0 ; str[i] != '\0' ; i++)
 	{
 		if (str[i] == ' ')
 		{
-			for (i = i ; str[i] == ' ' ; i++)
-			{
-				if (str[i] == '\0')
-				{
-					r = 1;
-					break;
-				}
-			}
-			if (r == 1)
-				break;
-			i--;
+			for ( ; str[i] == ' ' ; i++)
+				;
 			count = count + 1;
 		}
 	}
@@ -44,32 +31,27 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0 ; i <= count ; i++)
 	{
-		if (str[k] == ' ')
+		for (j = 0 ; str[k] != ' ' ; j++)
 		{
-			i--;
-			k++;
-			continue;
-		}
-		for (j = 0 ; str[k + j] != ' ' && str[k + j] != '\0' ; j++)
-		{
-			;
-		}
-		out[i] = (char *)malloc(j + 1 * sizeof(char));
-		if (out[i] == NULL)
-		{
-			for (j = 0 ; j <= i ; j++)
+			out[i] = (char * )malloc((k + 1) * sizeof(char));
+			if (out[i] == NULL)
 			{
-				free(out[j]);
+				for (k = 0 ; k <= i - 1 ; k++)
+				{
+					free(out[k]);
+				}
+				free(out);
+				return (NULL);
 			}
-			free(out);
 		}
-		for (j = 0 ; str[k] != ' ' && str[k] != '\0' ; j++)
+		for (j = 0 ; str[k] != ' ' ; j++)
 		{
 			out[i][j] = str[k];
 			k++;
 		}
+		k++;
 		out[i][j] = '\0';
 	}
 	out[i] = NULL;
-	return(out);
+	return (out);
 }
