@@ -11,6 +11,33 @@
  */
 
 
-char *srt_concat(char *s1, char *s2)
+char *str_concat(char *s1, char *s2)
 {
-	unsigned int i, j;
+	unsigned int i, j, size;
+	char *out;
+
+	for (i = 0 ; s1[i] != '\0' ; i++)
+		;
+	for (j = 0 ; s2[j] != '\0' ; j++)
+		;
+	size = i + j;
+	out = (char *)malloc(sizeof(char) * size + 1);
+	if (out == NULL)
+		return (NULL);
+	j = 0;
+	if (s1 != NULL)
+	{
+		for (j = 0 ; j < i ; j++)
+		{
+			out[j] = s1[j];
+		}
+	}
+	if (s2 != NULL)
+	{
+		for ( ; j < size ; j++)
+		{
+			out[j] = s2[j - i];
+		}
+	}
+	return (out);
+}
