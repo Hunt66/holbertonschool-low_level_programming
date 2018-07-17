@@ -6,7 +6,7 @@
  *argstostr - concatenates all the arguments of the program
  *@ac: number of arguments
  *@av: pointer to pointer of argument array
- *Return: the concated string
+ *Return: the concated string or NULL if fails
  */
 
 char *argstostr(int ac, char **av)
@@ -14,6 +14,8 @@ char *argstostr(int ac, char **av)
 	char *out;
 	int i, j, size, k;
 
+	if (ac == 0 || av == NULL)
+		return (NULL);
 	size = 0;
 	k = 0;
 	for (i = 0 ; i < ac ; i++)
