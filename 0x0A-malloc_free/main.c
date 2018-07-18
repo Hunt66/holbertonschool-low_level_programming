@@ -26,8 +26,9 @@ void print_tab(char **tab)
 int main(void)
 {
 	char **tab;
+	int i= 3;
 
-	tab = strtow("");
+	tab = strtow("one two three four ");
 	if (tab == NULL)
 	{
 		printf("Failed\n");
