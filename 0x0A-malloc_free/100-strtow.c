@@ -62,7 +62,7 @@ char **strtow(char *str)
 			;
 		}
 		out[i] = (char *)malloc((j + 1) * sizeof(char));
-		if (out[i] == NULL)
+		/*if (out[i] == NULL)
 		{
 			for (j = 0 ; j <= i ; j++)
 			{
@@ -70,7 +70,7 @@ char **strtow(char *str)
 			}
 			free(out);
 			return (NULL);
-		}
+			}*/
 		for (j = 0 ; str[k] != ' ' && str[k] != '\0' ; j++)
 		{
 			out[i][j] = str[k];

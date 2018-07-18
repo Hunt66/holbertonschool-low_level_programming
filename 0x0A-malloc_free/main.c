@@ -27,7 +27,7 @@ int main(void)
 {
 	char **tab;
 
-	tab = strtow("Hello    world        egg");
+	tab = strtow("");
 	if (tab == NULL)
 	{
 		printf("Failed\n");
