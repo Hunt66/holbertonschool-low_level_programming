@@ -17,9 +17,11 @@ char **strtow(char *str)
 
 	if (str == NULL || strlen(str) == 0)
 		return (NULL);
+
 	count = 0;
 	k = 0;
 	flag = 0;
+
 	if (str[0] != ' ')
 		count++;
 	for (i = 0 ; str[i] != '\0' ; i++)
@@ -40,7 +42,11 @@ char **strtow(char *str)
 			count = count + 1;
 		}
 	}
-	out = (char **)malloc((count) * sizeof(char));
+	i--;
+	if (str[i] != ' ')
+		count++;
+
+	out = (char **)malloc((count) * sizeof(char *));
 	if (out == NULL)
 		return (NULL);
 	for (i = 0 ; i < count - 1 ; i++)
