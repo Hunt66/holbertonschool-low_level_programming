@@ -12,14 +12,14 @@
 
 char **strtow(char *str)
 {
-	int i, j, k, count, r;
+	int i, j, k, count, flag;
 	char **out;
 
 	if (str == NULL || strlen(str) == 0)
 		return (NULL);
 	count = 0;
 	k = 0;
-	r = 0;
+	flag = 0;
 	if (str[0] != ' ')
 		count++;
 	for (i = 0 ; str[i] != '\0' ; i++)
@@ -30,20 +30,20 @@ char **strtow(char *str)
 			{
 				if (str[i] == '\0')
 				{
-					r = 1;
+					flag = 1;
 					break;
 				}
 			}
-			if (r == 1)
+			if (flag == 1)
 				break;
 			i--;
 			count = count + 1;
 		}
 	}
-	out = (char **)malloc((count + 1) * sizeof(char));
+	out = (char **)malloc((count) * sizeof(char));
 	if (out == NULL)
 		return (NULL);
-	for (i = 0 ; i <= count ; i++)
+	for (i = 0 ; i < count - 1 ; i++)
 	{
 		if (str[k] == ' ')
 		{
@@ -73,5 +73,5 @@ char **strtow(char *str)
 		out[i][j] = '\0';
 	}
 	out[i] = NULL;
-	return(out);
+	return (out);
 }
