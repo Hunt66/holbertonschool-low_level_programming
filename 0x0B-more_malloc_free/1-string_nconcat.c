@@ -9,7 +9,7 @@
  *@s1: first string pointer
  *@s2: second string pointer
  *@n: the ammount from s2 to concatenate
- *Retrun: the concated strings pointer
+ *Return: the concated strings pointer
  */
 
 
@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		else
 		{
-			out[b] = s2[b -a];
+			out[b] = s2[b - a];
 		}
 	}
 	out[b] = '\0';
