@@ -1,133 +1,6 @@
 #include"holberton.h"
 #include<stdio.h>
 #include<stdlib.h>
-
-
-
-/**
- *main - multiplys two numbers prints result I will do this by adding one string
- *       to itself the second string amount of times counting with a string and
- *       compairing it to to other
- *@argc: should alwayse be three
- *@argv: array where last two are to be multiplyed
- *Return: 0 alwayse
- */
-
-
-
-int main(int argc, char **argv[])
-{
-	char **out;
-	char *mul;
-	int i, j, a, b, c, len1, len2, count;
-
-	if (argc != 3)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	for (len1 = 0 ; argv[1][len1] ; len1++)
-	{
-		if (argv[1][len1] < '0' || argv[1][len1] > '9')
-		{
-			printf("Error\n");
-			exit(98);
-		}
-	}
-	for(len2 = 0 ; argv[2][len2] ; len2++)
-	{
-		if (argv[2][len2] < '0' || argv[2][len2] > '9')
-		{
-			printf("Error\n");
-			exit(98);
-		}
-	}
-	a = len1;
-	b = len2;
-	out = (char **)malloc((len1 + 1) * sizeof(char *));
-	if (out == NULL)
-		return (NULL);
-	count = 0;
-	c = 0;
-	for (len1 = 0 ; argv[1][len1] != '\0' ; len1++)
-	{
-		for (len2 = 0 ; argv[2][len2] != '\0' ; len2++)
-		{
-			out[count] = (char *)malloc(a + 1);
-			if (out == NULL)
-			{
-				for (count = count - 1 ; count >= 0 ; count--)
-				{
-					free(out[count]);
-				}
-				free(out);
-				return (out);
-			}
-
-			if (argv[1][len1] * argv[2][len2] + c < 9)
-			{
-				out[count][len2] = ((argv[1][len1] - '0') *
-						    (argv[2][len2])) + c;
-				c = 0;
-			}
-			else
-			{
-				out[count][len2] = (((argv[1][len1] - '0') *
-						     (argv[2][len2])) + c) % 10;
-				c = (((argv[1][len1] - '0') * (argv[2][len2] + c
-					      ) / 10));
-			}
-		}
-		if (count > 0)
-		{
-			out[count] = shift_left(out[count], count);
-		}
-		if (c > 0)
-		{
-			out[count] = shift_right(out[count], c);
-		}
-		/*for (i = 0 ; out[count][i] != '\0' ; i++)
-			;
-		if (count > 0)
-		{
-			for (j = 0 ; out[count - 1][j] != '\0' ; j++)
-				;
-			num2 = malloc(j);
-			if (num2 == NULL)
-				return (NULL);
-			for (j = 0 ; j <= i + 1 ; j++)
-			{
-				num2[j] = num1[j];
-			}
-			free(num1);
-		}
-		mul = "0";
-		num1 = malloc(i);
-		if (num1 == NULL)
-			return (NULL);
-		for (i = 0 ; out[count][i] != '\0' ; i++)
-		{
-			num1[i] = out[count][i];
-		}
-		num1[i] = '\0'
-		count++;
-		for (i = 0 ; mul[i] != '\0' ; i++)
-			;
-		mul = infinite_add(mul, num1, mul, i);
-		}*/
-	}
-	for (i = 0 ; i <= a ; i++)
-	{
-		mul = infinite_add(out[i], mul, mul, a * b);
-	}
-	for (count = count ; count >= 0 ; count--)
-	{
-		free(out[count - 1]);
-	}
-	free(out);
-	return (mul);
-
-
 /**
  *infinite_add - adds the numers stored on two strings
  *@n1: one of the added numbers
@@ -337,7 +210,7 @@ char *shift_left(char *st, int n)
 	{
 		out[len] = '0';
 	}
-	out[len] = '\0'
+	out[len] = '\0';
 	return (out);
 }
 
@@ -357,12 +230,147 @@ char *shift_right(char *st, char c)
 
 	for (len = 0 ; st[len] != '\0' ; len++)
 		;
-	out = _realloc(st, len, len + 2);
-	for (nt = l ; nt >= 1 ; nt--)
+	out = (char *)malloc(len + 2);
+	for (nt = len ; nt >= 1 ; nt--)
 	{
-		st[nt] = st[nt - 1];
+		out[nt] = st[nt - 1];
 	}
-	st[0] = c;
-	st[l + 1] = '\0';
-	return (st);
+	out[0] = c;
+	out[len + 1] = '\0';
+	return (out);
+}
+
+
+/**
+ *main - multiplys two numbers prints result I will do this by adding one string
+ *       to itself the second string amount of times counting with a string and
+ *       compairing it to to other
+ *@argc: should alwayse be three
+ *@argv: array where last two are to be multiplyed
+ *Return: 0 alwayse
+ */
+
+
+
+int main(int argc, char **argv)
+{
+	char **out;
+	char *mul;
+	int i, a, b, c, len1, len2, count;
+
+	if (argc != 3)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	for (len1 = 0 ; argv[1][len1] ; len1++)
+	{
+		if (argv[1][len1] < '0' || argv[1][len1] > '9')
+		{
+			printf("Error\n");
+			exit(98);
+		}
+	}
+	for(len2 = 0 ; argv[2][len2] ; len2++)
+	{
+		if (argv[2][len2] < '0' || argv[2][len2] > '9')
+		{
+			printf("Error\n");
+			exit(98);
+		}
+	}
+	a = len1;
+	b = len2;
+	out = (char **)malloc((len1 + 1) * sizeof(char *));
+	if (out == NULL)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	count = 0;
+	c = 0;
+	for (len1 = 0 ; argv[1][len1] != '\0' ; len1++)
+	{
+		for (len2 = 0 ; argv[2][len2] != '\0' ; len2++)
+		{
+			out[count] = (char *)malloc(a);
+			if (out == NULL)
+			{
+				for (count = count - 1 ; count >= 0 ; count--)
+				{
+					free(out[count]);
+				}
+				free(out);
+				printf("Error\n");
+				exit(98);
+			}
+		}
+
+			if ((argv[1][len1] - '0') * (argv[2][len2] - '0') + c
+			    <= 9)
+			{
+				out[count][len2] = ((argv[1][len1] - '0') *
+						    (argv[2][len2]) - '0') +
+					(c + '0');
+				c = 0;
+			}
+			else
+			{
+				out[count][len2] = (((argv[1][len1] - '0') *
+						     (argv[2][len2] - '0')) + c)
+					% 10+ '0';
+
+				c = ((((argv[1][len1] - '0') * (argv[2][len2] -
+							      '0')) + c) / 10);
+			}
+		if (count > 0)
+		{
+			out[count] = shift_left(out[count], count);
+		}
+		if (c > 0)
+		{
+			out[count] = shift_right(out[count], c);
+		}
+
+		/*for (i = 0 ; out[count][i] != '\0' ; i++)
+			;
+		if (count > 0)
+		{
+			for (j = 0 ; out[count - 1][j] != '\0' ; j++)
+				;
+			num2 = malloc(j);
+			if (num2 == NULL)
+				return (NULL);
+			for (j = 0 ; j <= i + 1 ; j++)
+			{
+				num2[j] = num1[j];
+			}
+			free(num1);
+		}
+		mul = "0";
+		num1 = malloc(i);
+		if (num1 == NULL)
+			return (NULL);
+		for (i = 0 ; out[count][i] != '\0' ; i++)
+		{
+			num1[i] = out[count][i];
+		}
+		num1[i] = '\0'
+		count++;
+		for (i = 0 ; mul[i] != '\0' ; i++)
+			;
+		mul = infinite_add(mul, num1, mul, i);
+		}*/
+	}
+	for (i = 0 ; i <= a ; i++)
+	{
+		mul = infinite_add(out[i], mul, mul, a * b);
+	}
+	for (count = count ; count >= 0 ; count--)
+	{
+		free(out[count - 1]);
+	}
+	free(out);
+	printf("%s\n", mul);
+	return (0);
 }
