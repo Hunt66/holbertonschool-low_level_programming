@@ -15,11 +15,11 @@
 
 
 
-int main(int argc, int argv[])
+int main(int argc, char **argv[])
 {
-	char **mul;
-	char *num1, *num2;
-	int tmp, flag, i, j, a, b, len1, len2;
+	char **out;
+	char *mul;
+	int i, j, a, b, c, len1, len2, count;
 
 	if (argc != 3)
 	{
@@ -42,20 +42,90 @@ int main(int argc, int argv[])
 			exit(98);
 		}
 	}
-	if (len1 < len2)
-	{
-		a = len1;
-		b = len2;
-	}
-	else
-	{
-		b = len1;
-		a = len2;
-	}
-	out = (char **)malloc(a + 1);
+	a = len1;
+	b = len2;
+	out = (char **)malloc((len1 + 1) * sizeof(char *));
 	if (out == NULL)
 		return (NULL);
-	
+	count = 0;
+	c = 0;
+	for (len1 = 0 ; argv[1][len1] != '\0' ; len1++)
+	{
+		for (len2 = 0 ; argv[2][len2] != '\0' ; len2++)
+		{
+			out[count] = (char *)malloc(a + 1);
+			if (out == NULL)
+			{
+				for (count = count - 1 ; count >= 0 ; count--)
+				{
+					free(out[count]);
+				}
+				free(out);
+				return (out);
+			}
+
+			if (argv[1][len1] * argv[2][len2] + c < 9)
+			{
+				out[count][len2] = ((argv[1][len1] - '0') *
+						    (argv[2][len2])) + c;
+				c = 0;
+			}
+			else
+			{
+				out[count][len2] = (((argv[1][len1] - '0') *
+						     (argv[2][len2])) + c) % 10;
+				c = (((argv[1][len1] - '0') * (argv[2][len2] + c
+					      ) / 10));
+			}
+		}
+		if (count > 0)
+		{
+			out[count] = shift_left(out[count], count);
+		}
+		if (c > 0)
+		{
+			out[count] = shift_right(out[count], c);
+		}
+		/*for (i = 0 ; out[count][i] != '\0' ; i++)
+			;
+		if (count > 0)
+		{
+			for (j = 0 ; out[count - 1][j] != '\0' ; j++)
+				;
+			num2 = malloc(j);
+			if (num2 == NULL)
+				return (NULL);
+			for (j = 0 ; j <= i + 1 ; j++)
+			{
+				num2[j] = num1[j];
+			}
+			free(num1);
+		}
+		mul = "0";
+		num1 = malloc(i);
+		if (num1 == NULL)
+			return (NULL);
+		for (i = 0 ; out[count][i] != '\0' ; i++)
+		{
+			num1[i] = out[count][i];
+		}
+		num1[i] = '\0'
+		count++;
+		for (i = 0 ; mul[i] != '\0' ; i++)
+			;
+		mul = infinite_add(mul, num1, mul, i);
+		}*/
+	}
+	for (i = 0 ; i <= a ; i++)
+	{
+		mul = infinite_add(out[i], mul, mul, a * b);
+	}
+	for (count = count ; count >= 0 ; count--)
+	{
+		free(out[count - 1]);
+	}
+	free(out);
+	return (mul);
 
 
 /**
@@ -244,4 +314,55 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	*p++ = '\0';
 	free(ptr);
 	return (out);
+}
+
+
+
+/**
+ *shift_left - adds x number of 0s to a string digets
+ *@st: input string
+ *@n: number of 0s
+ *Return: the altered string
+ */
+
+char *shift_left(char *st, int n)
+{
+	int len;
+	char *out;
+
+	for (len = 0 ; st[len] != '\0' ; len++)
+		;
+	out = _realloc(st, len, len + n + 1);
+	for (len = len ; len < len + n ; len++)
+	{
+		out[len] = '0';
+	}
+	out[len] = '\0'
+	return (out);
+}
+
+
+/**
+ *shift_right - shifts numbers in string to right and adds the carryer number
+ *@st: input string
+ *@c: carryer number
+ *Return: the altered string
+ */
+
+
+char *shift_right(char *st, char c)
+{
+	int nt, len;
+	char *out;
+
+	for (len = 0 ; st[len] != '\0' ; len++)
+		;
+	out = _realloc(st, len, len + 2);
+	for (nt = l ; nt >= 1 ; nt--)
+	{
+		st[nt] = st[nt - 1];
+	}
+	st[0] = c;
+	st[l + 1] = '\0';
+	return (st);
 }
