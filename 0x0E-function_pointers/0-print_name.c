@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "function_poimters.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,5 +12,6 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name != NULL && f != NULL)
+		f(name);
 }
