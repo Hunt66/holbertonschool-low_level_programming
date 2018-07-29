@@ -55,10 +55,8 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	i = 0;
-	while (format != NULL && i == 0 && strlen(format))
-	{
-		printf("\n");
-		i++;
-	}
+	/*while (format != NULL && i == 0)*/
+	printf("\n");
+	i++;
 	va_end(list);
 }
