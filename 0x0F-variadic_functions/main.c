@@ -1,5 +1,4 @@
 #include "variadic_functions.h"
-#include <stdlib.h>
 
 /**
  * main - check the code for Holberton School students.
@@ -8,6 +7,6 @@
  */
 int main(void)
 {
-	print_numbers(", " , 4, 0, 4 , -1024, 402);
+	print_strings(", ", 2, "Jay", "Django");
 	return (0);
 }
