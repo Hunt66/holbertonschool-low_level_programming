@@ -1,6 +1,5 @@
 #include<stdlib.h>
 #include<stdio.h>
-#define FLE (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 /**
  *main - prints the name of this file
  *Return: 0

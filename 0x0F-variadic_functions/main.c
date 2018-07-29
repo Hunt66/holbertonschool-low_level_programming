@@ -8,6 +8,6 @@
  */
 int main(void)
 {
-	print_all("ceisi", 'H', 0, NULL, 3);
+	print_all(NULL, 'H', 0, NULL, 3);
 	return (0);
 }

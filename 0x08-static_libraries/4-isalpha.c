@@ -16,19 +16,10 @@
 
 int _isalpha(int c)
 {
-	int b;
-	int a;
-	int i;
 
-	i = 0;
-	for (b = 'a' ; b <= 'z' ; b++)
-		for (a = 'A' ; a <= 'Z' ; a++)
-		{
-			if (c == b || c == a)
-			{
-				i = 1;
-				break;
-			}
-		}
-	return (i);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
+
+
 }

@@ -1,4 +1,4 @@
-#include"holberton.h"
+ttps://docs.google.com/presentation/d/1MSBaLoU96IXTYYGa1ZQMCV02-o17C57tEv9Au4JyzPc/edit?usp=sharing#include"holberton.h"
 
 /**
  *is_prime_number - returns 1 if prime and 0 if not
@@ -14,8 +14,6 @@ int is_prime_number(int n)
 		return (0);
 	return (prime_number(n, i));
 }
-
-
 /**
  *prime_number - checks if prime
  *@n: is this a prime number
