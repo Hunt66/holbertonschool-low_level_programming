@@ -17,10 +17,14 @@ list_t *add_node(list_t **head, const char *str)
 {
 	struct list_s *new = malloc(sizeof(struct list_s));
 	char *nstr = strdup(str);
-	size_t size = strlen(str);
+	size_t size;
+	int i;
 
 	if (!new)
 		return (NULL);
+	for (i = 0 ; nstr[i] ; i++)
+		;
+	size = i;
 
 	new->str = nstr;
 	new->len = size;
