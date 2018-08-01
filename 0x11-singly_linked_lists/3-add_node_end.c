@@ -6,7 +6,7 @@
 
 
 /**
- *add_node- add a new node to the beginning of a list_t
+ *add_node_end- add a new node to the end of a list_t
  *@head: head of list_t
  *@str: string to be added as node
  *Return: address of new element or NULL if fails
