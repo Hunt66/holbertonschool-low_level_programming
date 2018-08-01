@@ -1,0 +1,31 @@
+#include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
+
+
+/**
+ *add_node_end- add a new node to the end of a list_t
+ *@head: head of list_t
+ *@str: string to be added as node
+ *Return: address of new element or NULL if fails
+ */
+
+
+void free_list(list_t *head)
+{
+	list_t *current;
+
+	current = head;
+	current->str = head->str;
+	while (head != NULL)
+	{
+		current = head;
+		current->str = head->str;
+		head = head->next;
+		free(current->str);
+		free(current);
+	}
+
+}
