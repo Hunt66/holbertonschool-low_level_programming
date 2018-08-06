@@ -1,0 +1,10 @@
+#include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+
+/**
+ *get_nodeint_at_index- returns the nth node of a list
+ *@head: head of linked list
+ *@index: desired index to return
+ *Return: NULL if that node does not exist
