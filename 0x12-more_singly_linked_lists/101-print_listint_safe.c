@@ -92,14 +92,14 @@ size_t print_listint_safe(const listint_t *head)
 
 		if (test_current(new_head, head->next) == -1)
 		{
-			printf("[%p] %d\n", (void*)head, head->n);
+			printf("[%p] %d\n", (void *)head, head->n);
 			printf("-> [%p] %d\n",
-			       (void*)head->next, head->next->n);
+			       (void *)head->next, head->next->n);
 			exit(98);
 		}
 
 
-		printf("[%p] %d\n", (void*)head, head->n);
+		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
 
 		add_nodesize(&new_head, (size_t)head);
@@ -107,8 +107,11 @@ size_t print_listint_safe(const listint_t *head)
 
 	}
 
-	printf("[%p] %d\n", (void*)head, head->n);
+	printf("[%p] %d\n", (void *)head, head->n);
 
 
 	return (count + 1);
 }
+
+
+// FREE LIST YOU MADE
