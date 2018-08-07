@@ -13,14 +13,20 @@ int test_current(listsize_t *head, const listint_t *test)
 {
 	size_t size;
 
-	if (head->n == 0)
+	printf("inner test0\n");
+
+	if (head == NULL)
 		return (0);
+	printf("inner test\n");
 	size = head->n;
 	if (size == (size_t)test)
 		return (-1);
-	head = head->next;
-	if (head == 0)
+	printf("inner test2\n");
+	if (head == NULL)
 		return (0);
+	printf("inner test3\n");
+	head = head->next;
+	printf("inner test4\n");
 	return (test_current(head, test));
 }
 
@@ -53,12 +59,16 @@ size_t print_listint_safe(const listint_t *head)
 	stor_current->n = 0;
 	for (count = 0 ; head->next != NULL ; count++)
 	{
-		printf("test%d\n", (int)count + 1);
+		printf("test%d\n", (int)count + 2);
 
 		if (test_current(new_head, head) == -1)
 			exit(98);
 
+		printf("passed test\n");
+
 		stor_current->n = (size_t)head;
+
+		printf("saved stor_current->n\n");
 
 		printf("[%p] %d\n", (void*)head, head->n);
 		head = head->next;
