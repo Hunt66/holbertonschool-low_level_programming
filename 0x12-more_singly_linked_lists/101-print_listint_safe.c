@@ -13,24 +13,53 @@ int test_current(listsize_t *head, const listint_t *test)
 {
 	size_t size;
 
-	printf("inner test0\n");
+
 
 	if (head == NULL)
 		return (0);
-	printf("inner test\n");
+
 	size = head->n;
 	if (size == (size_t)test)
 		return (-1);
-	printf("inner test2\n");
+
 	if (head == NULL)
 		return (0);
-	printf("inner test3\n");
+
 	head = head->next;
-	printf("inner test4\n");
+
 	return (test_current(head, test));
 }
 
+/**
+ *add_nodesize- add a new node to the beginning of a listsize_t
+ *@head: head of listsize_t
+ *@n: size_t to be added as node
+ *Return: address of new element or NULL if fails
+ */
 
+
+listsize_t *add_nodesize(listsize_t **head, const size_t n)
+{
+	listsize_t *new = malloc(sizeof(listsize_t));
+
+
+	if (!new)
+		return (NULL);
+	if (*head == NULL)
+	{
+		new->n = n;
+		new->next = NULL;
+		*head = new;
+		return (*head);
+	}
+
+	new->n = n;
+
+
+	new->next = *head;
+	*head = new;
+	return (*head);
+}
 
 
 
@@ -47,34 +76,36 @@ int test_current(listsize_t *head, const listint_t *test)
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t count;
-	listsize_t *new_head;
+	listsize_t *new_head = NULL;
 	listsize_t *stor_current = malloc(sizeof(listint_t));
 
 	if (stor_current == NULL)
 		exit(98);
 
 
-	printf("test1\n");
+
+	stor_current->n = (size_t)head;
 	new_head = stor_current;
-	stor_current->n = 0;
 	for (count = 0 ; head->next != NULL ; count++)
 	{
-		printf("test%d\n", (int)count + 2);
 
-		if (test_current(new_head, head) == -1)
+
+		if (test_current(new_head, head->next) == -1)
 			exit(98);
 
-		printf("passed test\n");
 
-		stor_current->n = (size_t)head;
 
-		printf("saved stor_current->n\n");
+
+
 
 		printf("[%p] %d\n", (void*)head, head->n);
 		head = head->next;
-		stor_current = stor_current->next;
+
+		add_nodesize(&new_head, (size_t)head);
+
+
 	}
-	printf("out of loop\n");
+
 	printf("[%p] %d\n", (void*)head, head->n);
 
 
