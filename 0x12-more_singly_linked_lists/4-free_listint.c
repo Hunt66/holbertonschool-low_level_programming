@@ -23,8 +23,6 @@ void free_listint(listint_t *head)
 	while (current->next != NULL)
 	{
 		current = head;
-		if (current->next == NULL)
-			return;
 		head = head->next;
 		free(current);
 	}
