@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
-#include <string.h>
 
 
 /**
@@ -14,14 +13,18 @@
 
 void free_listint(listint_t *head)
 {
-	listint_t *current;
+	listint_t *current = NULL;
 
 	if (head == NULL)
 		return;
 
-	while (current != NULL)
+	current = head;
+
+	while (current->next != NULL)
 	{
 		current = head;
+		if (current->next == NULL)
+			return;
 		head = head->next;
 		free(current);
 	}
