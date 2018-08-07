@@ -91,11 +91,12 @@ size_t print_listint_safe(const listint_t *head)
 
 
 		if (test_current(new_head, head->next) == -1)
+		{
+			printf("[%p] %d\n", (void*)head, head->n);
+			printf("-> [%p] %d\n",
+			       (void*)head->next, head->next->n);
 			exit(98);
-
-
-
-
+		}
 
 
 		printf("[%p] %d\n", (void*)head, head->n);
