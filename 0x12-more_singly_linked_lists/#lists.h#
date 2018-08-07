@@ -18,14 +18,7 @@ typedef struct listint_s
 } listint_t;
 
 
-/**
- * struct listsize_s - singly linked list
- * @n: size_t
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- * for Holberton project
- */
+gcc -Wall -pedantic -Werror -Wextra 101-main.c 2-add_nodeint.c 101-print_listint_safe.c -o m
 typedef struct listsize_s
 {
 	size_t n;
