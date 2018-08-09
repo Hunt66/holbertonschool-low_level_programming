@@ -2,7 +2,7 @@
 
 
 /**
- *binart_to_uint- converts a binary nuber to an unsigned int
+ *binary_to_uint- converts a binary nuber to an unsigned int
  *@b: string of 0's and 1's to be coverted
  *Return: 0 if b is null or there is a number that is not 0 or 1
  *        or the converted number
@@ -14,7 +14,6 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int i;
 	unsigned int mul;
 	unsigned int ans = 0;
-	/*unsigned int zero = 0;*/
 
 	if (b == NULL)
 		return (ans);
