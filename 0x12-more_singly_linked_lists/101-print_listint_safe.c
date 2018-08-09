@@ -79,6 +79,8 @@ size_t print_listint_safe(const listint_t *head)
 	listsize_t *new_head = NULL;
 	listsize_t *stor_current = malloc(sizeof(listint_t));
 
+	if (!head)
+		return (NULL);
 	if (stor_current == NULL)
 		return (NULL);
 
