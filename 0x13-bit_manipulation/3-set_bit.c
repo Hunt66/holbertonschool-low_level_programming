@@ -10,14 +10,11 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int i;
-	unsigned long int ch = 1;
 
-	for (i = 0 ; i < index - 1 ; i++)
-	{
-		if ()
-			return (-1);
-	}
-	n[i] = n[i] & ch;
+	if (index > sizeof(n) * 8)
+		return (-1);
+
+
+	*n = *n | 1 << index;
 	return (1);
 }
