@@ -14,9 +14,9 @@ int create_file(const char *filename, char *text_content)
 	char *buf1;
 
 	if (!filename)
-	  return(NULL);
+	  return(-1);
 	buf1 = malloc(sizeof(text_content));
-	fd = open(filename, O_CREATE | O_RDWR | OTRUNC, 0600);
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
 
@@ -26,7 +26,7 @@ int create_file(const char *filename, char *text_content)
 
 
 	write(fd, buf1, sizeof(text_content));
-	free(buf);
+	free(buf1);
 	close(fd);
 	return (1);
 }
