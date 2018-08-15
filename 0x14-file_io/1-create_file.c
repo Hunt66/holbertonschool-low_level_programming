@@ -10,11 +10,11 @@
 
 int create_file(const char *filename, char *text_content)
 {
-  int fd;/* = open(filename, O_CREAT | O_RDWR| O_TRUNC, 0600);*/
+	int fd;/* = open(filename, O_CREAT | O_RDWR| O_TRUNC, 0600);*/
 	char *buf1;
 
 	if (!filename)
-	  return(-1);
+		return(-1);
 	buf1 = malloc(sizeof(text_content));
 	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (fd == -1)
