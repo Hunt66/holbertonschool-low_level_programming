@@ -65,6 +65,6 @@ int main(void)
 	delete_dnodeint_at_index(&head, 0);
 	print_dlistint(head);
 	printf("normal print passed\n");
-	back_print(head);
+
 	return (0);
 }
