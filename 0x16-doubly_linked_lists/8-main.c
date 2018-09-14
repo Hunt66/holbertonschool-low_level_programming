@@ -22,9 +22,11 @@ int main(void)
 	printf("-----------------\n");
 	delete_dnodeint_at_index(&head, 7);
 	print_dlistint(head);
+	back_print(head);
 	printf("-----------------\n");
 	delete_dnodeint_at_index(&head, 0);
 	print_dlistint(head);
+	back_print(head);
 	printf("-----------------\n");
 	delete_dnodeint_at_index(&head, 0);
 	print_dlistint(head);
