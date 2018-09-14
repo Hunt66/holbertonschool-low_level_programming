@@ -28,6 +28,10 @@ int main(void)
 	print_dlistint(head);
 	back_print(head);
 	printf("-----------------\n");
+	delete_dnodeint_at_index(&head, 4);
+	print_dlistint(head);
+	back_print(head);
+	printf("-----------------\n");
 	delete_dnodeint_at_index(&head, 0);
 	print_dlistint(head);
 	printf("-----------------\n");
@@ -41,9 +45,6 @@ int main(void)
 	print_dlistint(head);
 	printf("-----------------\n");
 	delete_dnodeint_at_index(&head, 0);
-	print_dlistint(head);
-	printf("-----------------\n");
-	delete_dnodeint_at_index(&head, 0);
 	printf("-----------------\n");
 	delete_dnodeint_at_index(&head, 0);
 	printf("-----------------\n");
@@ -63,5 +64,7 @@ int main(void)
 	printf("-----------------\n");
 	delete_dnodeint_at_index(&head, 0);
 	print_dlistint(head);
+	printf("normal print passed\n");
+	back_print(head);
 	return (0);
 }
