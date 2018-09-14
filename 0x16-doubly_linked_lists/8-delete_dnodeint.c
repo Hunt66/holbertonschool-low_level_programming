@@ -10,27 +10,27 @@
 int delete_help(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *current = *head;
-        dlistint_t *hold = NULL;
-        unsigned int i;
+	dlistint_t *hold = NULL;
+	unsigned int i;
 
 	for (i = 0; i < index - 1; i++)
-        {
-                current = current->next;
-                if (current->next == NULL)
-                        return (-1);
-        }
-        if (current->next->next != NULL)
-        {
-                hold = current->next->next;
-                hold->prev = current;
-                free(current->next);
-                current->next = hold;
-        }
-        else
-        {
-                free(current->next);
-                current->next = NULL;
-        }
+	{
+		current = current->next;
+		if (current->next == NULL)
+			return (-1);
+	}
+	if (current->next->next != NULL)
+	{
+		hold = current->next->next;
+		hold->prev = current;
+		free(current->next);
+		current->next = hold;
+	}
+	else
+	{
+		free(current->next);
+		current->next = NULL;
+	}
 	return (1);
 }
 
