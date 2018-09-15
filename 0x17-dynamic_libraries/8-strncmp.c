@@ -4,10 +4,11 @@
  *_strncmp- compairs two strings and subtracts the added askii charicter values
  *@s1: first string pointer
  *@s2: the one to be subtracted
+ *@n: something
  *Return: int value of s1's askii minus s2's askii
  */
 
-int _strncmp(char *s1, char *s2)
+int _strncmp(char *s1, char *s2, int n)
 {
 	int i;
 
