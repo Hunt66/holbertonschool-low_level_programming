@@ -1,0 +1,7 @@
+#include "lists.h"
+
+/**
+ *free_dlistint - frees all nodes in a dlistint_t list
+ *@head: the head of the list to be freed
+ *Return: void
+ */
