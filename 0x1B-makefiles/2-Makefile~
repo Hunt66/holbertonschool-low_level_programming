@@ -1,8 +1,0 @@
-CC=gcc
-SRC=main.c holberton.c
-OBJ=
-Name=holberton
-all=
-	OBJ=$(CC) -c -o main.o $(SRC)
-	OBJ+=$(CC) -c -o holberton.o $(SRC)
-	$(CC) $(OBJ) -o $(NAME)
