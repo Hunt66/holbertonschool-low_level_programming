@@ -4,7 +4,7 @@ def island_perimeter(grid):
     """finds the perimeter of an island of 1's"""
     count = 0
     for i in range(0, len(grid) -1):
-        for j in range(0, len(gird[i])):
+        for j in range(0, len(grid[i])):
             if grid[i][j] == 1:
                 if j - 1 >= 0 and grid[i][j - 1] == 0:
                     count += 1
