@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- *binary_tree_delete: deletes an entire binary tree
+ *binary_tree_delete- deletes an entire binary tree
  *@tree: the pointer to the root of the binary tree
  *Return: void
  */

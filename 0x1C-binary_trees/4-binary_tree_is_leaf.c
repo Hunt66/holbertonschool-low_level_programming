@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- *binary_tree_is_leaf: checks if node is a leaf
+ *binary_tree_is_leaf- checks if node is a leaf
  *@node: node to check
  *Return: 1 if leaf 0 if not
  */

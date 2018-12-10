@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- *binary_tree_height: measures the height of a binary tree
+ *binary_tree_height- measures the height of a binary tree
  *@tree: the root of tree to be measured
  *Return: void
  */

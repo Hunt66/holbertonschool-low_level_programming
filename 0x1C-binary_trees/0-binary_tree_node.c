@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- *binary_tree: creates a binary tree
+ *binary_tree_node- creates a binary tree
  *@parent: the node of the binary tree to create
  *@value: int value to put into the new node
  *Return: pointer to new node or NULL if fails

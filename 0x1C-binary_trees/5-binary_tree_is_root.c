@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- *binary_tree_is_root: checks if a node is the root of tree
+ *binary_tree_is_root- checks if a node is the root of tree
  *@node: the node to check
  *Return: 1 if root 0 if not
  */

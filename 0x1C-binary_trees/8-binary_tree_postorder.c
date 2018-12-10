@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- *binary_tree_postorder: goes through a binary tree using in-order traversal
+ *binary_tree_postorder- goes through a binary tree using in-order traversal
  *@tree: the root of tree
  *@func: the function done on node
  *Return: void
