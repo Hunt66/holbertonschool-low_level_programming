@@ -28,7 +28,7 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 
 
 /**
- *binary_trees_ancestor: finds the lowest common ancestor
+ *binary_trees_ancestor- finds the lowest common ancestor
  *@first: the first node
  *@second: the second node
  *Return: the ancester node
@@ -56,7 +56,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 			first = first->left;
 		else
 			first = first->right;
-		temp = first ->parent;
+		temp = first->parent;
 		return (temp);
 	}
 	while (1)
