@@ -65,12 +65,10 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 	y = binary_tree_height(tree);
-	printf("%lu\n", y);
+
 	for (; y > 0; y--)
 		out += x * x;
 	out = out;
-	printf("%lu\n", out);
-	printf("%lu\n", binary_tree_size(tree) + 1);
 	if (out == binary_tree_size(tree) + 1)
 		return (1);
 	return (0);
