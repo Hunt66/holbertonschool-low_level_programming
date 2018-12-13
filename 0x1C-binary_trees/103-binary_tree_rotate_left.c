@@ -3,6 +3,13 @@
 #include "binary_trees.h"
 #include <stdio.h>
 
+/**
+ *binary_tree_rotate_left- rotates tree to the left
+ *@tree: the root of tree
+ *Retrun: the new tree
+ */
+
+
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
 {
 	binary_tree_t *temp;
