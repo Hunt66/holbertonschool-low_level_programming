@@ -4,7 +4,6 @@
 #include <stdio.h>
 
 
-
 /**
  *binary_tree_levelorder- goes throught a binary tree using level-order
  *@tree: the root of the tree
