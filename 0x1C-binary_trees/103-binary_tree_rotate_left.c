@@ -6,7 +6,7 @@
 /**
  *binary_tree_rotate_left- rotates tree to the left
  *@tree: the root of tree
- *Retrun: the new tree
+ *Return: the new tree
  */
 
 
