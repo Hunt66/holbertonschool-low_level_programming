@@ -104,7 +104,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		return (1);
 	if (binary_tree_balance(tree) != 0 && binary_tree_balance(tree) != 1)
 		return (0);
-	printf("%d\n", binary_tree_balance(tree));
+
 	if (binary_tree_balance(tree) == 0 && tree->right == NULL)
 		return (1);
 	return (binary_tree_balance(tree->left));
