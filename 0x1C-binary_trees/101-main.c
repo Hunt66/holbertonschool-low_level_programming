@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include "binary_trees.h"
 
+
+
+#include <stdlib.h>
+#include <stdio.h>
+#include "binary_trees.h"
+
 /**
  * print_num - Prints a number
  *
@@ -22,12 +28,13 @@ int main(void)
     binary_tree_t *root;
 
     root = binary_tree_node(NULL, 98);
-    root->right = binary_tree_node(root, 12);
-    root->right->right = binary_tree_node(root, 402);
-    root->right->right->right = binary_tree_node(root->right, 6);
-    root->right->right->right->right = binary_tree_node(root->right, 56);
-    root->right->right->right->right->right = binary_tree_node(root->right, 256);
-    root->right->right->right->right->right->right = binary_tree_node(root->right, 512);
+    root->left = binary_tree_node(root, 12);
+    root->left->left = binary_tree_node(root->left, 402);
+    root->left->left->left = binary_tree_node(root->left->left, 6);
+    root->left->right = binary_tree_node(root->left, 56);
+    root->right = binary_tree_node(root, 512);
+    root->right->left = binary_tree_node(root->right, 256);
+
 
     binary_tree_print(root);
     binary_tree_levelorder(root, &print_num);
