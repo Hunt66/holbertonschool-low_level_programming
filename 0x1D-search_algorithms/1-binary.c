@@ -5,11 +5,12 @@
 
 
 /**
- *binary_help: helper function for binary search tree
+ *binary_help- helper function for binary search tree
  *@array: int array to search
  *@left: the left limit of this rotation
  *@right: the right limit of this rotation
  *@value: value searched for
+ *Return: the spot number is int (index) or -1
  */
 
 int binary_help(int *array, size_t left, size_t right, int value)
@@ -38,42 +39,12 @@ int binary_help(int *array, size_t left, size_t right, int value)
  *@array: the sorted int array to be searched
  *@size: size_t size of array
  *@value: the value searched for
+ *Return: the spot the number is in or -1
  */
 
 int binary_search(int *array, size_t size, int value)
 {
-	return(binary_help(array, 0, size - 1, value));
+	if (array == NULL)
+		return (-1);
+	return (binary_help(array, 0, size - 1, value));
 }
-
-
-
-
-
-
-
-
-/*	size_t i, k, j = 0;
-
-	while (1)
-	{
-		i = size/2 + j;
-		printf("%lu\n", i);
-		if (size/2 == 0 && array[i] != value)
-			return(-1);
-		printf("Searching in array: ");
-		for (k = j; k < size + j - 1; k++)
-			printf("%d, ", array[k]);
-		printf("%d\n", array[k]);
-		if (array[i] == value)
-			return(i);
-		if (array[i] < value)
-		{
-			j = i;
-			size = size/2;
-		}
-		if (array[i] > value)
-		{
-			size = size/2 - 1;
-		}
-	}
-	}*/
