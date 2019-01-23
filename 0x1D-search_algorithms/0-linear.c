@@ -4,7 +4,7 @@
 
 
 /**
- *lnear_search- a linear search for a number in an array
+ *linear_search- a linear search for a number in an array
  *@array: int array to search
  *@size: size_t size of the array
  *@value: int value searched for
