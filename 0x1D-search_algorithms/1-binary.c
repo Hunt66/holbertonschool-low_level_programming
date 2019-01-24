@@ -32,8 +32,6 @@ int binary_help(int *array, size_t left, size_t right, int value)
 		if (array[mid + 1] == value)
 			return (mid + 1);
 	}
-	/*if (array[mid] == value && right - (((right - left) / 2) + 1) < mid)
-		left = left + ((right - left) / 2) + 1;*/
 	if (array[mid] >= value)
 		right = right - (((right - left) / 2) + 1);
 	if (array[mid] < value)
