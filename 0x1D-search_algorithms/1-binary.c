@@ -25,7 +25,7 @@ int binary_help(int *array, size_t left, size_t right, int value)
 	if (right - left == 0 && array[mid] != value)
 		return (-1);
 	if (array[mid] == value)
-		return (value);
+		return (mid);
 	if (array[mid] > value)
 		right = (right / 2) - 1;
 	if (array[mid] < value)
