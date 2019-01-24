@@ -22,16 +22,18 @@ int binary_help(int *array, size_t left, size_t right, int value)
 	for (i = left; i < right; i++)
 		printf("%d, ", array[i]);
 	printf("%d\n", array[i]);
+
 	if (right - left == 0 && array[mid] != value)
 		return (-1);
 	if (array[mid] == value)
 		return (mid);
 	if (array[mid] > value)
-		right = (right / 2) - 1;
+		right = right - (((right - left) / 2) + 1);
 	if (array[mid] < value)
 		left = left + ((right - left) / 2) + 1;
 	if ((right == 0 || right + 1 == 0) && array[0] != value)
 	{
+		printf("Searching in array: %d\n", array[0]);
 		return (-1);
 	}
 	return (binary_help(array, left, right, value));
