@@ -8,6 +8,7 @@
  *@array: the array to search
  *@size: size_t size of array
  *@value: the value looked for
+ *Return: the index of value or -1
  */
 
 int jump_search(int *array, size_t size, int value)
