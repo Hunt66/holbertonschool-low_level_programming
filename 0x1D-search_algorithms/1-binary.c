@@ -32,7 +32,6 @@ int binary_help(int *array, size_t left, size_t right, int value)
 		left = left + ((right - left) / 2) + 1;
 	if ((right == 0 || right + 1 == 0) && array[0] != value)
 	{
-		printf("Searching in array: %d\n", array[0]);
 		return (-1);
 	}
 	return (binary_help(array, left, right, value));
